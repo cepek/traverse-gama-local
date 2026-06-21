@@ -1,3 +1,13 @@
+# Local readonly copy of GNU Gama project
+gama
+gama-local
+gama-local-yaml2gkf
+temp
+*.gkf
+*.txt
+*~ 
+traverse-gama-local-*gz
+
 # Prerequisites
 *.d
 
