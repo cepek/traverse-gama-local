@@ -5,6 +5,7 @@ gama-local-yaml2gkf
 temp
 *.gkf
 *.txt
+*.svg
 *~ 
 traverse-gama-local-*gz
 

@@ -1,0 +1,113 @@
+# fixed traverse without orientaion
+#
+
+defaults:
+  axes-xy: sw
+  angles: left-handed
+  angular: 400
+  sigma-act: aposteriori
+  sigma-apr: 10
+  conf-pr: 0.90
+
+description: Fixed traverse without orientaion - 8 points, directions
+  and angles
+
+points:
+  - id: A
+    x:  0
+    y:  300
+    fix: xy
+    
+  - id: B
+    adj: xy
+  - id: C
+    adj: xy
+  - id: D
+    adj: xy
+  - id: E
+    adj: xy
+  - id: F
+    adj: xy
+  - id: G
+    adj: xy
+    
+  - id: H
+    x: 700
+    y: 200
+    fix: xy
+
+
+
+observations:
+  - from: A
+    obs:
+      - type : distance
+        to: B
+        val: 141.421356237
+        stdev: 7
+  - from: B
+    obs:
+      - type: angle
+        bs: A
+        fs: C
+        val: 100.0000
+        stdev: 10
+      - type: distance
+        to: C
+        val: 141.421356237
+        stdev: 7
+  - from: C
+    obs:
+      - type: distance
+        to: D
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: B
+        fs: D
+        val: 300.0000
+        stdev: 10
+  - from: D
+    obs:
+      - type : distance
+        to: E
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: C
+        fs: E
+        val: 200.0000
+        stdev: 10
+  - from: E
+    obs:
+      - type : distance
+        to: F
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: D
+        fs: F
+        val: 100.0000
+        stdev: 10
+  - from: F
+    obs:
+      - type: angle
+        bs: E
+        fs: G
+        val: 200.0000
+        stdev: 10
+      - type : distance
+        to: G
+        val: 141.421356237
+        stdev: 7
+  - from: G
+    obs:
+      - type: angle
+        bs: F
+        fs: H
+        val: 300.0000
+        stdev: 10
+      - type : distance
+        to: H
+        val: 141.421356237
+        stdev: 7

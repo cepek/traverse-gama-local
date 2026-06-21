@@ -9,8 +9,8 @@ defaults:
   sigma-apr: 10
   conf-pr: 0.90
 
-description:
-   Fixed traverse without orientaion - directions and angles (single strigh line)
+description: Fixed traverse without orientation - 4 points, directions
+   and angles (single straight line)
 
 points:
   - id: A
