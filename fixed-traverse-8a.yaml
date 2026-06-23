@@ -1,0 +1,184 @@
+# fixed traverse without orientaion
+#
+
+defaults:
+  axes-xy: sw
+  angles: left-handed
+  angular: 400
+  sigma-act: aposteriori
+  sigma-apr: 10
+  conf-pr: 0.90
+
+description: Fixed traverse ABCDEFGH without orientaion - 8 points,
+  directions and angles; second parallel traverse MNOPQ is defined
+  only by measured distances.
+
+points:
+  - id: A
+    x:  0
+    y:  300
+    fix: xy
+
+  - id: B
+    adj: xy
+  - id: C
+    adj: xy
+  - id: D
+    adj: xy
+  - id: E
+    adj: xy
+  - id: F
+    adj: xy
+  - id: G
+    adj: xy
+
+  - id: H
+    x: 700
+    y: 200
+    fix: xy
+
+# --------------------------------------------------
+
+  - id: M
+    adj: xy
+  - id: N
+    adj: xy
+  - id: O
+    adj: xy
+  - id: P
+    adj: xy
+
+
+observations:
+  - from: A
+    obs:
+      - type : distance
+        to: B
+        val: 141.421356237
+        stdev: 7
+  - from: B
+    obs:
+      - type: angle
+        bs: A
+        fs: C
+        val: 100.0000
+        stdev: 10
+      - type: distance
+        to: C
+        val: 141.421356237
+        stdev: 7
+  - from: C
+    obs:
+      - type: distance
+        to: D
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: B
+        fs: D
+        val: 300.0000
+        stdev: 10
+  - from: D
+    obs:
+      - type : distance
+        to: E
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: C
+        fs: E
+        val: 200.0000
+        stdev: 10
+  - from: E
+    obs:
+      - type : distance
+        to: F
+        val: 141.421356237
+        stdev: 7
+      - type: angle
+        bs: D
+        fs: F
+        val: 100.0000
+        stdev: 10
+  - from: F
+    obs:
+      - type: angle
+        bs: E
+        fs: G
+        val: 200.0000
+        stdev: 10
+      - type : distance
+        to: G
+        val: 141.421356237
+        stdev: 7
+  - from: G
+    obs:
+      - type: angle
+        bs: F
+        fs: H
+        val: 300.0000
+        stdev: 10
+      - type : distance
+        to: H
+        val: 141.421356237
+        stdev: 7
+
+  - from: M
+    obs:
+      - type: distance
+        to: B
+        val: 118.83
+        stdev: 7
+      - type: distance
+        to: C
+        val: 206.78
+        stdev: 7
+      - type: distance
+        to: D
+        val: 174.01
+        stdev: 7
+
+  - from: N
+    obs:
+      - type: distance
+        to: M
+        val: 136.01
+        stdev: 7
+      - type: distance
+        to: D
+        val: 218.04
+        stdev: 7
+      - type: distance
+        to: E
+        val: 192.09
+        stdev: 7
+
+  - from: O
+    obs:
+      - type: distance
+        to: N
+        val: 291.20
+        stdev: 7
+      - type: distance
+        to: E
+        val: 174.64
+        stdev: 7
+      - type: distance
+        to: F
+        val: 214.71
+        stdev: 7
+
+  - from: P
+    obs:
+      - type: distance
+        to: O
+        val: 159.42
+        stdev: 7
+      - type: distance
+        to: F
+        val: 152.49
+        stdev: 7
+      - type: distance
+        to: G
+        val: 185.22
+        stdev: 7
