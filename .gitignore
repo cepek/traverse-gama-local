@@ -2,7 +2,9 @@
 gama
 gama-local
 gama-local-yaml2gkf
+octave-workspace
 temp
+work.m
 *.gkf
 *.txt
 *.svg
