@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h1>Parse and Generate YAML with C++</h1>
+
+<p>https://mojoauth.com/parse-and-generate-formats/parse-and-generate-yaml-with-cpp</p>
+
+<h2>Loading and Parsing YAML Files</h2>
+
+<p>For instance, consider a <code>config.yaml</code> file:</p>
+
+<pre><code>application:
+  name: MyAwesomeApp
+  version: 1.2.0
+database:
+  host: localhost
+  port: 5432
+</code></pre>
+
+<p>You'd load it like this:</p>
+
+<pre><code>#include &lt;yaml-cpp/yaml.h&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    YAML::Node config = YAML::Load(std::ifstream("config.yaml"));
+    std::string app_name = config["application"]["name"].as&lt;std::string&gt;();
+    std::cout &lt;&lt; "Application Name: " &lt;&lt; app_name &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+
+<p>A common pitfall is attempting to access a key that doesn't
+exist. This can cause your program to crash. Always verify a node's
+existence using <code>config["key"].IsDefined()</code> before dereferencing it
+with <code>.as&lt;T&gt;()</code> to prevent runtime errors.</p>
+
+</body>
+</html>
